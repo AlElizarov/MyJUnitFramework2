@@ -8,4 +8,8 @@ public class WasRun {
 		return wasRun;
 	}
 
+	public void testMethod() {
+		wasRun = true;
+	}
+
 }

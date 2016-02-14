@@ -1,6 +1,6 @@
 package myJUnit;
 
-public class WasRun {
+public class WasRun extends MyTestCase{
 
 	private boolean wasRun;
 

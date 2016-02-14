@@ -3,7 +3,10 @@ package myJUnit;
 public class TestMyJunitFramework {
 	
 	public static void main(String[] args){
-		System.out.println(new WasRun().getWasRun());
+		WasRun test = new WasRun();
+		System.out.println(test.getWasRun());
+		test.testMethod();
+		System.out.println(test.getWasRun());
 	}
 
 }

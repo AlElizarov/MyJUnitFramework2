@@ -6,7 +6,6 @@ public class TestCaseTest extends MyTestCase {
 	
 	@Override
 	public void setUp(){
-		System.out.println("yes");
 		test = new WasRun();
 	}
 	
@@ -17,7 +16,9 @@ public class TestCaseTest extends MyTestCase {
 	
 	public void testSetUp(){
 		test.run();
-		assert(test.wasSetup());
+		assert("setUp " == test.getLog());
 	}
+	
+	
 
 }

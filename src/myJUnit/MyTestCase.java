@@ -5,9 +5,6 @@ import java.lang.reflect.Method;
 
 public class MyTestCase {
 
-	public void testMethod() {
-	}
-
 	public String run() {
 		TestResult result = new TestResult();
 		Method[] methods = getClass().getMethods();

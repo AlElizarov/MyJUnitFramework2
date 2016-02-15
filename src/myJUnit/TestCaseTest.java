@@ -8,5 +8,11 @@ public class TestCaseTest extends MyTestCase {
 		test.run();
 		assert(test.getWasRun());
 	}
+	
+	public void testSetUp(){
+		WasRun test = new WasRun();
+		test.setUp();
+		assert(test.wasSetup());
+	}
 
 }

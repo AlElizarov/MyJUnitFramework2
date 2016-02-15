@@ -15,5 +15,9 @@ public class WasRun extends MyTestCase{
 	public String getLog() {
 		return log;
 	}
+	
+	public void tearDown(){
+		log += "tearDown ";
+	}
 
 }

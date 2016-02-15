@@ -6,5 +6,13 @@ public class TestCaseTest extends MyTestCase {
 		WasRun test = new WasRun();
 		assert ("2 run, 1 failed, 0 failures".equals(test.run()));
 	}
+	
+	public void testFormatting(){
+		TestResult result = new TestResult();
+		result.testRuned();
+		result.testFailed();
+		result.testFailure();
+		assert("1 run, 1 failed, 1 failures".equals(result.summary()));
+	}
 
 }

@@ -9,11 +9,6 @@ public class TestCaseTest extends MyTestCase {
 		test = new WasRun();
 	}
 	
-	public void testRunning(){
-		test.run();
-		assert(test.getWasRun());
-	}
-	
 	public void testSetUp(){
 		test.run();
 		assert("setUp testMethod ".equals(test.getLog()));

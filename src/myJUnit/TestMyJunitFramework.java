@@ -3,8 +3,11 @@ package myJUnit;
 public class TestMyJunitFramework {
 	
 	public static void main(String[] args){
-		TestCaseTest test = new TestCaseTest();
+//		TestCaseTest test = new TestCaseTest();
+//		System.out.println(test.run().summary());
+		TestMyAssert test = new TestMyAssert();
 		System.out.println(test.run().summary());
+		
 	}
 
 }

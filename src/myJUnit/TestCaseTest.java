@@ -18,7 +18,7 @@ public class TestCaseTest extends MyTestCase {
 	public void testRef(){
 		WasRun test = new WasRun();
 		test.run();
-		assert(3 == test.getCountMethods());
+		assert(2 == test.getCountMethods());
 	}
 
 }

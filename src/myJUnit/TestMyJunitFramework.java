@@ -6,6 +6,7 @@ public class TestMyJunitFramework {
 		TestCaseTest test = new TestCaseTest();
 		test.testRunning();
 		test.testSetUp();
+		test.testRef();
 	}
 
 }

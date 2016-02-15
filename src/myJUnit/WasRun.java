@@ -8,5 +8,9 @@ public class WasRun extends MyTestCase{
 	public void testBroken(){
 		throw new RuntimeException();
 	}
+	
+	public void testFailure(){
+		throw new AssertionError();
+	}
 
 }

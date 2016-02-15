@@ -19,9 +19,12 @@ public class MyTestCase {
 					methods[i].invoke(this);
 				} catch (IllegalAccessException | IllegalArgumentException
 						| InvocationTargetException e) {
-					result.testFailed();
-					if(e.getCause().toString().equals(AssertionError.class.getName()))
+					if(e.getCause().toString().equals(AssertionError.class.getName())){
+						result.testFailure();toString();
 						e.printStackTrace();
+					}
+					else
+						result.testFailed();
 				}
 				tearDown();
 			}

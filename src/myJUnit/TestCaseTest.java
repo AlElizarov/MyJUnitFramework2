@@ -2,21 +2,20 @@ package myJUnit;
 
 public class TestCaseTest extends MyTestCase {
 	
-	//WasRun test;
+	WasRun test;
 	
 	@Override
 	public void setUp(){
-		//test = new WasRun();
+		System.out.println("yes");
+		test = new WasRun();
 	}
 	
 	public void testRunning(){
-		WasRun test = new WasRun();
 		test.run();
 		assert(test.getWasRun());
 	}
 	
 	public void testSetUp(){
-		WasRun test = new WasRun();
 		test.run();
 		assert(test.wasSetup());
 	}

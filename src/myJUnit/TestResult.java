@@ -12,13 +12,8 @@ public class TestResult {
 	private int failedCount = 0;
 	private int failureCount = 0;
 	private SortedMap<String, String> testMethods = new TreeMap<>();
-	private ArrayList<String> testMethodNames = new ArrayList<>();
-	private ArrayList<Integer> sucsessNumbers = new ArrayList<>();
-	private ArrayList<Integer> failedNumbers = new ArrayList<>();
-	private ArrayList<Integer> failureNumbers = new ArrayList<>();
 
 	public String summary() {
-		Collections.sort(testMethodNames);
 		String res = runCount + " run, " + failedCount + " failed, " + failureCount
 				+ " failures\n";
 		for(Map.Entry<String, String> entry : testMethods.entrySet()){
@@ -29,22 +24,6 @@ public class TestResult {
 
 	public SortedMap<String, String> getTestMethods() {
 		return testMethods;
-	}
-
-	public synchronized ArrayList<String> getTestMethodNames() {
-		return testMethodNames;
-	}
-
-	public ArrayList<Integer> getSucsessNumbers() {
-		return sucsessNumbers;
-	}
-
-	public ArrayList<Integer> getFailedNumbers() {
-		return failedNumbers;
-	}
-
-	public ArrayList<Integer> getFailureNumbers() {
-		return failureNumbers;
 	}
 
 	public void testRuned() {

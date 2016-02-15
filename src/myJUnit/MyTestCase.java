@@ -11,7 +11,6 @@ public class MyTestCase {
 		for (int i = 0; i < methods.length; i++) {
 			if (methods[i].getName().startsWith("test")) {
 				result.testRuned();
-				result.getTestMethodNames().add(methods[i].getName());
 				try {
 					setUp();
 					methods[i].invoke(this);

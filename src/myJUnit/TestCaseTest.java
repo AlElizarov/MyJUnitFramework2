@@ -4,9 +4,9 @@ public class TestCaseTest extends MyTestCase {
 	
 	public void testRunning(){
 		WasRun test = new WasRun();
-		System.out.println(test.getWasRun());
+		assert(!test.getWasRun());
 		test.run();
-		System.out.println(test.getWasRun());
+		assert(test.getWasRun());
 	}
 
 }

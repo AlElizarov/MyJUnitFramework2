@@ -14,6 +14,7 @@ public class WasRun extends MyTestCase{
 	}
 
 	public void setUp() {
+		wasRun = false;
 		wasSetup = true;
 	}
 

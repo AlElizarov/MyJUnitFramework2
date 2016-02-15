@@ -6,7 +6,9 @@ public class MyTestSuite {
 	}
 
 	public String run() {
-		return null;
+		String result;
+		result = new WasRun().run();
+		return result;
 	}
 
 }

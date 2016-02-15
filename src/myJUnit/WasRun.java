@@ -3,7 +3,7 @@ package myJUnit;
 public class WasRun extends MyTestCase{
 
 	private boolean wasRun;
-	private boolean wasSetup;
+	private String log;
 	
 	public boolean getWasRun() {
 		return wasRun;
@@ -15,11 +15,11 @@ public class WasRun extends MyTestCase{
 
 	public void setUp() {
 		wasRun = false;
-		wasSetup = true;
+		log = "setUp ";
 	}
 
-	public boolean wasSetup() {
-		return wasSetup;
+	public String getLog() {
+		return log;
 	}
 
 }

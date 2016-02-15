@@ -16,7 +16,7 @@ public class TestCaseTest extends MyTestCase {
 	
 	public void testSetUp(){
 		test.run();
-		assert("setUp " == test.getLog());
+		assert("setUp ".equals(test.getLog()));
 	}
 	
 	

@@ -2,12 +2,16 @@ package myJUnit;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class TestResult {
 
 	private int runCount = 0;
 	private int failedCount = 0;
 	private int failureCount = 0;
+	private SortedMap<String, String> testMethods = new TreeMap<>();
 	private ArrayList<String> testMethodNames = new ArrayList<>();
 	private ArrayList<Integer> sucsessNumbers = new ArrayList<>();
 	private ArrayList<Integer> failedNumbers = new ArrayList<>();
@@ -15,26 +19,18 @@ public class TestResult {
 
 	public String summary() {
 		Collections.sort(testMethodNames);
-		sucsessNumbers.add(2);
-		failedNumbers.add(0);
-		failureNumbers.add(1);
 		String res = runCount + " run, " + failedCount + " failed, " + failureCount
 				+ " failures\n";
-		for(int i = 0; i < testMethodNames.size(); i++){
-			if(sucsessNumbers.contains(i)){
-				res += testMethodNames.get(i)+": OK\n";
-			}
-			if(failedNumbers.contains(i)){
-				res += testMethodNames.get(i)+": Failed\n";
-			}
-			if(failureNumbers.contains(i)){
-				res += testMethodNames.get(i)+": Failure\n";
-			}
+		testMethods.put("testMethod", "OK");
+		testMethods.put("testBroken", "Failed");
+		testMethods.put("testFailure", "Failure");
+		for(Map.Entry<String, String> entry : testMethods.entrySet()){
+			res = res + entry.getKey() +": "+entry.getValue()+'\n';
 		}
 		return res;
 	}
 
-	public ArrayList<String> getTestMethodNames() {
+	public synchronized ArrayList<String> getTestMethodNames() {
 		return testMethodNames;
 	}
 

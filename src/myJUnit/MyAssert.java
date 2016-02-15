@@ -17,4 +17,10 @@ public class MyAssert {
 		throw new AssertionError("not true");
 	}
 
+	public static void assertFalse(boolean b) {
+		assertTrue(!b);
+	}
+	
+	
+
 }

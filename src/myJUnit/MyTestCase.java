@@ -11,5 +11,9 @@ public class MyTestCase {
 
 	public void setUp() {
 	}
+	
+	public int getCountMethods(){
+		return 0;
+	}
 
 }

@@ -11,16 +11,17 @@ public class MyTestCase {
 	public String run() {
 		TestResult result = new TestResult();
 		Method[] methods = getClass().getMethods();
-		for(int i = 0; i < methods.length; i++){
-			if(methods[i].getName().startsWith("test")){
+		for (int i = 0; i < methods.length; i++) {
+			if (methods[i].getName().startsWith("test")) {
 				setUp();
+				result.testRuned();
 				try {
 					methods[i].invoke(this);
-					result.testRuned();
 				} catch (IllegalAccessException | IllegalArgumentException
 						| InvocationTargetException e) {
-					e.printStackTrace();
 					result.testFailed();
+					if(e.getCause().toString().equals(AssertionError.class.getName()))
+						e.printStackTrace();
 				}
 				tearDown();
 			}
@@ -30,15 +31,15 @@ public class MyTestCase {
 
 	public void setUp() {
 	}
-	
-	public void tearDown(){
+
+	public void tearDown() {
 	}
 
-	public int getCountMethods(){
+	public int getCountMethods() {
 		Method[] methods = getClass().getMethods();
 		int count = 0;
-		for(int i = 0; i < methods.length; i++){
-			if(methods[i].getName().startsWith("test")){
+		for (int i = 0; i < methods.length; i++) {
+			if (methods[i].getName().startsWith("test")) {
 				count++;
 			}
 		}

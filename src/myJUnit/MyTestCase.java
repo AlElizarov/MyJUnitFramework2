@@ -19,11 +19,15 @@ public class MyTestCase {
 						| InvocationTargetException e) {
 					e.printStackTrace();
 				}
+				tearDown();
 			}
 		}
 	}
 
 	public void setUp() {
+	}
+	
+	public void tearDown(){
 	}
 
 	public int getCountMethods(){

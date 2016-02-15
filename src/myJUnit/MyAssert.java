@@ -7,4 +7,9 @@ public class MyAssert {
 		throw new AssertionError("expected "+expected+", but was "+actual);
 	}
 
+	public static void assertNotEquals(Object expected, Object actual) {
+		if(!expected.equals(actual)) return;
+		throw new AssertionError("values should be different. Actual: "+actual);
+	}
+
 }

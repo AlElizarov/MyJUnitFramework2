@@ -2,8 +2,9 @@ package myJUnit;
 
 public class MyAssert {
 
-	public static void assertEquals(int i, int j) {
-		
+	public static void assertEquals(Object expected, Object actual) {
+		if(expected.equals(actual)) return;
+		throw new AssertionError("expected "+expected+", but was "+actual);
 	}
 
 }

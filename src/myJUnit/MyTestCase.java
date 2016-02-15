@@ -18,7 +18,7 @@ public class MyTestCase {
 				} catch (IllegalAccessException | IllegalArgumentException
 						| InvocationTargetException e) {
 					if (e.getCause().toString()
-							.equals(AssertionError.class.getName())) {
+							.equals(AssertionError.class.getName()+": "+e.getCause().getMessage())) {
 						result.testFailure();
 						result.getTestMethods().put(methods[i].getName(), "Failure");
 					} else {

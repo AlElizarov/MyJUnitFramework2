@@ -7,5 +7,10 @@ public class TestCaseTest extends MyTestCase {
 		test.run();
 		assert ("setUp testMethod tearDown ".equals(test.getLog()));
 	}
+	
+	public void testResult(){
+		WasRun test = new WasRun();
+		assert ("1 run, o failed".equals(test.run()));
+	}
 
 }

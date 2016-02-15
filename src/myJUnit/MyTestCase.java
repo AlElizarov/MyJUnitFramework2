@@ -21,7 +21,6 @@ public class MyTestCase {
 						| InvocationTargetException e) {
 					if(e.getCause().toString().equals(AssertionError.class.getName())){
 						result.testFailure();toString();
-						e.printStackTrace();
 					}
 					else
 						result.testFailed();

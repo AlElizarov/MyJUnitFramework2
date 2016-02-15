@@ -8,7 +8,7 @@ public class MyTestCase {
 	public void testMethod() {
 	}
 
-	public void run() {
+	public String run() {
 		Method[] methods = getClass().getMethods();
 		for(int i = 0; i < methods.length; i++){
 			if(methods[i].getName().startsWith("test")){
@@ -22,6 +22,7 @@ public class MyTestCase {
 				tearDown();
 			}
 		}
+		return null;
 	}
 
 	public void setUp() {

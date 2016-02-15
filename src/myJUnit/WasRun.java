@@ -21,9 +21,5 @@ public class WasRun extends MyTestCase{
 	public boolean wasSetup() {
 		return wasSetup;
 	}
-	
-	public void testR(){
-		
-	}
 
 }

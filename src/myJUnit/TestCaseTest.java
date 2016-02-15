@@ -11,7 +11,7 @@ public class TestCaseTest extends MyTestCase {
 	
 	public void testSetUp(){
 		WasRun test = new WasRun();
-		test.setUp();
+		test.run();
 		assert(test.wasSetup());
 	}
 

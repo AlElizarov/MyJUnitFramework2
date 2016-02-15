@@ -4,7 +4,7 @@ public class TestCaseTest extends MyTestCase {
 	
 	public void testResult(){
 		WasRun test = new WasRun();
-		assert ("3 run, 1 failed, 0 failures".equals(test.run()));
+		assert ("3 run, 1 failed, 1 failures".equals(test.run()));
 	}
 	
 	public void testFormatting(){
@@ -13,6 +13,13 @@ public class TestCaseTest extends MyTestCase {
 		result.testFailed();
 		result.testFailure();
 		assert("1 run, 1 failed, 1 failures".equals(result.summary()));
+	}
+	
+	public void testSuite(){
+		TestSuite suite = new TestSuite();
+		suite.add("WasRun");
+		String res = suite.run();
+		assert ("3 run, 1 failed, 1 failures".equals(res));
 	}
 
 }

@@ -9,6 +9,7 @@ public class MyTestCase {
 	}
 
 	public String run() {
+		TestResult result = new TestResult();
 		Method[] methods = getClass().getMethods();
 		for(int i = 0; i < methods.length; i++){
 			if(methods[i].getName().startsWith("test")){
@@ -22,7 +23,7 @@ public class MyTestCase {
 				tearDown();
 			}
 		}
-		return "1 run, 0 failed";
+		return result.summary();
 	}
 
 	public void setUp() {

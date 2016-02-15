@@ -16,10 +16,11 @@ public class MyTestCase {
 					methods[i].invoke(this);
 				} catch (IllegalAccessException | IllegalArgumentException
 						| InvocationTargetException e) {
-					if(e.getCause().toString().equals(AssertionError.class.getName())){
-						result.testFailure();toString();
-					}
-					else
+					if (e.getCause().toString()
+							.equals(AssertionError.class.getName())) {
+						result.testFailure();
+						toString();
+					} else
 						result.testFailed();
 				}
 				tearDown();
@@ -34,14 +35,4 @@ public class MyTestCase {
 	public void tearDown() {
 	}
 
-	public int getCountMethods() {
-		Method[] methods = getClass().getMethods();
-		int count = 0;
-		for (int i = 0; i < methods.length; i++) {
-			if (methods[i].getName().startsWith("test")) {
-				count++;
-			}
-		}
-		return count;
-	}
 }

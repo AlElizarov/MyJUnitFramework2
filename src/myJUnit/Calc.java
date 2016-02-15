@@ -10,4 +10,8 @@ public class Calc {
 		return x-y;
 	}
 
+	public static int mult(int x, int y) {
+		return x*y;
+	}
+
 }

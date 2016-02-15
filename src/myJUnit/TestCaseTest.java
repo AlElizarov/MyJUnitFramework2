@@ -8,14 +8,6 @@ public class TestCaseTest extends MyTestCase {
 				.equals(test.run().summary()));
 	}
 
-	public void testFormatting() {
-		TestResult result = new TestResult();
-		result.testRuned();
-		result.testFailed();
-		result.testFailure();
-		assert ("1 run, 1 failed, 1 failures".equals(result.summary()));
-	}
-
 	public void testSuite() {
 		MyTestSuite suite = new MyTestSuite();
 		suite.add(new WasRun());

@@ -10,6 +10,7 @@ public class WasRun extends MyTestCase{
 	}
 
 	public void testMethod() {
+		log += "testMethod ";
 		wasRun = true;
 	}
 

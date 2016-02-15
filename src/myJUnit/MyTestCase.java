@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 
 public class MyTestCase {
 
-	public String run() {
+	public TestResult run() {
 		TestResult result = new TestResult();
 		Method[] methods = getClass().getMethods();
 		for (int i = 0; i < methods.length; i++) {
@@ -26,7 +26,7 @@ public class MyTestCase {
 				tearDown();
 			}
 		}
-		return result.summary();
+		return result;
 	}
 
 	public void setUp() {

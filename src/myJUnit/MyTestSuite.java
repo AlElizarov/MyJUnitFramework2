@@ -10,10 +10,10 @@ public class MyTestSuite {
 		tests.add(test);
 	}
 
-	public String run() {
-		String result = "";
+	public TestResult run() {
+		TestResult result = new TestResult();
 		for(int i = 0; i < tests.size(); i++){
-			result += tests.get(i).run();
+			tests.get(i).run().addResults(result);
 		}
 		return result;
 	}

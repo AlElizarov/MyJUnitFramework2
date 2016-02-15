@@ -1,5 +1,6 @@
 package myJUnit;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class MyTestCase {
@@ -8,8 +9,18 @@ public class MyTestCase {
 	}
 
 	public void run() {
-		setUp();
-		testMethod();
+		Method[] methods = getClass().getMethods();
+		for(int i = 0; i < methods.length; i++){
+			if(methods[i].getName().startsWith("test")){
+				setUp();
+				try {
+					methods[i].invoke(this);
+				} catch (IllegalAccessException | IllegalArgumentException
+						| InvocationTargetException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 
 	public void setUp() {

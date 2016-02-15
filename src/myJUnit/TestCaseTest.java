@@ -17,7 +17,7 @@ public class TestCaseTest extends MyTestCase {
 	
 	public void testSuite(){
 		MyTestSuite suite = new MyTestSuite();
-		suite.add("WasRun");
+		suite.add(new WasRun());
 		String res = suite.run();
 		assert ("3 run, 1 failed, 1 failures".equals(res));
 	}

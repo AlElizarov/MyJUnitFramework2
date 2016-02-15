@@ -10,9 +10,9 @@ public class MyTestCase {
 		Method[] methods = getClass().getMethods();
 		for (int i = 0; i < methods.length; i++) {
 			if (methods[i].getName().startsWith("test")) {
-				setUp();
 				result.testRuned();
 				try {
+					setUp();
 					methods[i].invoke(this);
 				} catch (IllegalAccessException | IllegalArgumentException
 						| InvocationTargetException e) {

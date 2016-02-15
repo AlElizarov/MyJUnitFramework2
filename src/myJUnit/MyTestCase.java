@@ -16,9 +16,11 @@ public class MyTestCase {
 				setUp();
 				try {
 					methods[i].invoke(this);
+					result.testRuned();
 				} catch (IllegalAccessException | IllegalArgumentException
 						| InvocationTargetException e) {
 					e.printStackTrace();
+					result.testFailed();
 				}
 				tearDown();
 			}

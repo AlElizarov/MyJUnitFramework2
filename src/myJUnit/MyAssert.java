@@ -12,4 +12,9 @@ public class MyAssert {
 		throw new AssertionError("values should be different. Actual: "+actual);
 	}
 
+	public static void assertTrue(boolean b) {
+		if(b) return;
+		throw new AssertionError("not true");
+	}
+
 }

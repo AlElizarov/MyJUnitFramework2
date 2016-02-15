@@ -22,5 +22,9 @@ public class TestCalc extends MyTestCase{
 	public void testMult(){
 		assert(12 == Calc.mult(x, y));
 	}
+	
+	public void testDivide(){
+		assert(3/4 == Calc.divide(x, y));
+	}
 
 }

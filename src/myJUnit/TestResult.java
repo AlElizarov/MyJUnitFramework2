@@ -1,6 +1,7 @@
 package myJUnit;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class TestResult {
 
@@ -13,12 +14,10 @@ public class TestResult {
 	private ArrayList<Integer> failureNumbers = new ArrayList<>();
 
 	public String summary() {
-		testMethodNames.add("testMethod");
-		testMethodNames.add("testBroken");
-		testMethodNames.add("testFailure");
-		sucsessNumbers.add(0);
-		failedNumbers.add(1);
-		failureNumbers.add(2);
+		Collections.sort(testMethodNames);
+		sucsessNumbers.add(2);
+		failedNumbers.add(0);
+		failureNumbers.add(1);
 		String res = runCount + " run, " + failedCount + " failed, " + failureCount
 				+ " failures\n";
 		for(int i = 0; i < testMethodNames.size(); i++){
@@ -33,6 +32,22 @@ public class TestResult {
 			}
 		}
 		return res;
+	}
+
+	public ArrayList<String> getTestMethodNames() {
+		return testMethodNames;
+	}
+
+	public ArrayList<Integer> getSucsessNumbers() {
+		return sucsessNumbers;
+	}
+
+	public ArrayList<Integer> getFailedNumbers() {
+		return failedNumbers;
+	}
+
+	public ArrayList<Integer> getFailureNumbers() {
+		return failureNumbers;
 	}
 
 	public void testRuned() {

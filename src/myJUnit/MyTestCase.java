@@ -2,9 +2,6 @@ package myJUnit;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class MyTestCase {
 
@@ -18,16 +15,16 @@ public class MyTestCase {
 				try {
 					setUp();
 					methods[i].invoke(this);
-					result.getSucsessNumbers().add(i);
+					result.getTestMethods().put(methods[i].getName(), "OK");
 				} catch (IllegalAccessException | IllegalArgumentException
 						| InvocationTargetException e) {
 					if (e.getCause().toString()
 							.equals(AssertionError.class.getName())) {
 						result.testFailure();
-						result.getFailureNumbers().add(i);
+						result.getTestMethods().put(methods[i].getName(), "Failure");
 					} else {
 						result.testFailed();
-						result.getFailedNumbers().add(i);
+						result.getTestMethods().put(methods[i].getName(), "Failed");
 					}
 				}
 				tearDown();

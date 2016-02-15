@@ -21,13 +21,14 @@ public class TestResult {
 		Collections.sort(testMethodNames);
 		String res = runCount + " run, " + failedCount + " failed, " + failureCount
 				+ " failures\n";
-		testMethods.put("testMethod", "OK");
-		testMethods.put("testBroken", "Failed");
-		testMethods.put("testFailure", "Failure");
 		for(Map.Entry<String, String> entry : testMethods.entrySet()){
 			res = res + entry.getKey() +": "+entry.getValue()+'\n';
 		}
 		return res;
+	}
+
+	public SortedMap<String, String> getTestMethods() {
+		return testMethods;
 	}
 
 	public synchronized ArrayList<String> getTestMethodNames() {

@@ -14,5 +14,9 @@ public class TestCalc extends MyTestCase{
 	public void testPlus(){
 		assert(7 == Calc.plus(x, y));
 	}
+	
+	public void testMinus(){
+		assert(-1 == Calc.minus(x, y));
+	}
 
 }

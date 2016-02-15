@@ -20,7 +20,7 @@ public class TestCaseTest extends MyTestCase {
 		suite.add(new WasRun());
 		suite.add(new TestCalc());
 		String res = suite.run().summary();
-		assert ("4 run, 1 failed, 1 failures".equals(res));
+		assert ("5 run, 1 failed, 1 failures".equals(res));
 	}
 
 }

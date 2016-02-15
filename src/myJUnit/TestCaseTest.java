@@ -16,7 +16,7 @@ public class TestCaseTest extends MyTestCase {
 	
 	public void testSetUp(){
 		test.run();
-		assert("setUp ".equals(test.getLog()));
+		assert("setUp testMethod ".equals(test.getLog()));
 	}
 	
 	

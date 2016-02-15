@@ -1,14 +1,38 @@
 package myJUnit;
 
+import java.util.ArrayList;
+
 public class TestResult {
 
 	private int runCount = 0;
 	private int failedCount = 0;
 	private int failureCount = 0;
+	private ArrayList<String> testMethodNames = new ArrayList<>();
+	private ArrayList<Integer> sucsessNumbers = new ArrayList<>();
+	private ArrayList<Integer> failedNumbers = new ArrayList<>();
+	private ArrayList<Integer> failureNumbers = new ArrayList<>();
 
 	public String summary() {
-		return runCount + " run, " + failedCount + " failed, " + failureCount
-				+ " failures";
+		testMethodNames.add("testMethod");
+		testMethodNames.add("testBroken");
+		testMethodNames.add("testFailure");
+		sucsessNumbers.add(0);
+		failedNumbers.add(1);
+		failureNumbers.add(2);
+		String res = runCount + " run, " + failedCount + " failed, " + failureCount
+				+ " failures\n";
+		for(int i = 0; i < testMethodNames.size(); i++){
+			if(sucsessNumbers.contains(i)){
+				res += testMethodNames.get(i)+": OK\n";
+			}
+			if(failedNumbers.contains(i)){
+				res += testMethodNames.get(i)+": Failed\n";
+			}
+			if(failureNumbers.contains(i)){
+				res += testMethodNames.get(i)+": Failure\n";
+			}
+		}
+		return res;
 	}
 
 	public void testRuned() {

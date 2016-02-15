@@ -10,12 +10,12 @@ public class TestCaseTest extends MyTestCase {
 	
 	public void testResult(){
 		WasRun test = new WasRun();
-		assert ("2 run, 1 failed".equals(test.run()));
+		assert ("2 run, 1 failed, 0 failure".equals(test.run()));
 	}
 	
 	public void testFailed(){
 		WasRun test = new WasRun();
-		assert ("2 run, 1 failed".equals(test.run()));
+		assert ("2 run, 1 failed, 0 failure".equals(test.run()));
 	}
 
 }

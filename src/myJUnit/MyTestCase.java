@@ -17,8 +17,8 @@ public class MyTestCase {
 					result.getTestMethods().put(methods[i].getName(), "OK");
 				} catch (IllegalAccessException | IllegalArgumentException
 						| InvocationTargetException e) {
-					System.out.println("first arg: " + e.getCause().toString()
-							+ ": " + e.getCause().getMessage());
+//					System.out.println("first arg: " + e.getCause().toString()
+//							+ ": " + e.getCause().getMessage());
 					String firstArg = e.getCause().toString();
 					String secondArg = AssertionError.class.getName();
 					if (e.getCause().getMessage() != null) {
@@ -28,11 +28,11 @@ public class MyTestCase {
 					if (firstArg.equals(secondArg)) {
 						result.testFailure();
 						result.getTestMethods().put(methods[i].getName(),
-								"Failure");
+								"Failure: "+e.getCause().getMessage());
 					} else {
 						result.testFailed();
 						result.getTestMethods().put(methods[i].getName(),
-								"Failed");
+								"Failed: "+e.getCause().getClass().getSimpleName());
 					}
 				}
 				tearDown();

@@ -6,7 +6,8 @@ public class WasRun extends MyTestCase{
 	}
 
 	public void testBroken(){
-		throw new RuntimeException();
+		int [] arr = new int[10];
+		arr[10] = 10;
 	}
 	
 	public void testFailure(){

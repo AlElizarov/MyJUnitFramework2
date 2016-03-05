@@ -12,19 +12,19 @@ public class TestCalc extends MyTestCase{
 	}
 	
 	public void testPlus(){
-		assert(7 == Calc.plus(x, y));
+		MyAssert.assertEquals(7, Calc.plus(x, y));
 	}
 	
 	public void testMinus(){
-		assert(-1 == Calc.minus(x, y));
+		MyAssert.assertEquals(-1, Calc.minus(x, y));
 	}
 	
 	public void testMult(){
-		assert(12 == Calc.mult(x, y));
+		MyAssert.assertEquals(12, Calc.mult(x, y));
 	}
 	
 	public void testDivide(){
-		assert(3/4 == Calc.divide(x, y));
+		MyAssert.assertEquals(3/4, Calc.divide(x, y));
 	}
 
 }

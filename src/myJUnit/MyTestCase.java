@@ -17,18 +17,29 @@ public class MyTestCase {
 					result.getTestMethods().put(methods[i].getName(), "OK");
 				} catch (IllegalAccessException | IllegalArgumentException
 						| InvocationTargetException e) {
-					if (e.getCause().toString()
-							.equals(AssertionError.class.getName()+": "+e.getCause().getMessage())) {
+					System.out.println("first arg: " + e.getCause().toString()
+							+ ": " + e.getCause().getMessage());
+					String firstArg = e.getCause().toString();
+					String secondArg = AssertionError.class.getName();
+					if (e.getCause().getMessage() != null) {
+						firstArg += ": " + e.getCause().getMessage();
+						secondArg += ": " + e.getCause().getMessage() + ": "+ e.getCause().getMessage();
+					}
+					if (firstArg.equals(secondArg)) {
 						result.testFailure();
-						result.getTestMethods().put(methods[i].getName(), "Failure");
+						result.getTestMethods().put(methods[i].getName(),
+								"Failure");
 					} else {
 						result.testFailed();
-						result.getTestMethods().put(methods[i].getName(), "Failed");
+						result.getTestMethods().put(methods[i].getName(),
+								"Failed");
 					}
 				}
 				tearDown();
 			}
 		}
+		result.getTestClasses().put(getClass().getSimpleName(),
+				result.getTestMethods());
 		return result;
 	}
 

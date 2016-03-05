@@ -10,7 +10,8 @@ public class WasRun extends MyTestCase{
 	}
 	
 	public void testFailure(){
-		throw new AssertionError();
+		MyAssert.assertEquals(7, 5);
+		//throw new AssertionError();
 	}
 
 }

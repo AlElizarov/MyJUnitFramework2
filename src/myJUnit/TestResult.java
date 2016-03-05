@@ -1,7 +1,5 @@
 package myJUnit;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -12,12 +10,17 @@ public class TestResult {
 	private int failedCount = 0;
 	private int failureCount = 0;
 	private SortedMap<String, String> testMethods = new TreeMap<>();
+	private SortedMap<String, SortedMap<String, String>> testClasses = new TreeMap<>();
 
 	public String summary() {
-		String res = runCount + " run, " + failedCount + " failed, " + failureCount
-				+ " failures\n";
-		for(Map.Entry<String, String> entry : testMethods.entrySet()){
-			res = res + entry.getKey() +": "+entry.getValue()+'\n';
+		String res = runCount + " run, " + failedCount + " failed, "
+				+ failureCount + " failures\n";
+		for (Map.Entry<String, SortedMap<String, String>> entry : testClasses
+				.entrySet()) {
+			res = res + entry.getKey() + ":\n";
+			for (Map.Entry<String, String> entry2 : entry.getValue().entrySet()) {
+				res = res + entry2.getKey() + ": " + entry2.getValue() + '\n';
+			}
 		}
 		return res;
 	}
@@ -66,6 +69,10 @@ public class TestResult {
 
 	public void setFailureCount(int failureCount) {
 		this.failureCount = failureCount;
+	}
+
+	public SortedMap<String, SortedMap<String, String>> getTestClasses() {
+		return testClasses;
 	}
 
 }

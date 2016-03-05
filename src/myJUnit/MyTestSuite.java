@@ -14,6 +14,7 @@ public class MyTestSuite {
 		TestResult result = new TestResult();
 		for(int i = 0; i < tests.size(); i++){
 			tests.get(i).run().addResults(result);
+			result.getTestClasses().put(tests.get(i).getClass().getSimpleName(), tests.get(i).run().getTestMethods());
 		}
 		return result;
 	}

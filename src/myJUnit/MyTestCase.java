@@ -32,7 +32,7 @@ public class MyTestCase {
 					} else {
 						result.testFailed();
 						result.getTestMethods().put(methods[i].getName(),
-								"Failed: "+e.getCause().getClass().getSimpleName());
+								"Failed: "+e.getCause().getClass().getSimpleName()+": "+e.getCause().getMessage());
 					}
 				}
 				tearDown();

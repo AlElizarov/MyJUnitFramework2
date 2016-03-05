@@ -1,5 +1,7 @@
 package myJUnit;
 
+import java.util.ArrayList;
+
 public class TestMyJunitFramework {
 	
 	public static void main(String[] args){
@@ -11,6 +13,7 @@ public class TestMyJunitFramework {
 		System.out.println("TestMyAssert: "+test2.run().summary());
 		System.out.println("TestCaseTest: "+test3.run().summary());
 		System.out.println("WasRun: "+test4.run().summary());
+		
 		
 	}
 

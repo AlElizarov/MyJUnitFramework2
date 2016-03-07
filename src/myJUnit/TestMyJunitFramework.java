@@ -1,20 +1,19 @@
 package myJUnit;
 
-import java.util.ArrayList;
-
 public class TestMyJunitFramework {
-	
-	public static void main(String[] args){
+
+	public static void main(String[] args) {
+
 		TestCalc test1 = new TestCalc();
 		TestMyAssert test2 = new TestMyAssert();
-		TestCaseTest test3 = new TestCaseTest();
-		WasRun test4 = new WasRun();
-		System.out.println("TestCalc: "+test1.run().summary());
-		System.out.println("TestMyAssert: "+test2.run().summary());
-		System.out.println("TestCaseTest: "+test3.run().summary());
-		System.out.println("WasRun: "+test4.run().summary());
-		
-		
+		TestMyTestTimer test3 = new TestMyTestTimer(1000);
+
+		MyTestSuite suite = new MyTestSuite();
+		suite.add(test1);
+		suite.add(test2);
+		suite.add(test3);
+		suite.run();
+		//test2.run();
 	}
 
 }

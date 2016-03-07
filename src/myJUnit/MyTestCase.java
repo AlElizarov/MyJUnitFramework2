@@ -3,6 +3,7 @@ package myJUnit;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -120,11 +121,18 @@ public class MyTestCase {
 					Class<?> clazz = Class.forName(ste[idx].getClassName());
 					ClassLoader loader = clazz.getClassLoader();
 					String cn = ste[idx].getClassName();
-				    String rn = cn.replace('.', '/') + ".class";
+				    String rn = cn.replace('.', '/');
+				    rn = rn.replace("bin", "src");
+				    rn += ".class";
 					path = loader.getResource(rn);
+					String newPath = path.toString().replace("bin", "src");
+					newPath = newPath.replace(".class", ".java");
+					path = new URL(newPath);
 					//path = new URL(URLEncoder.encode(path.toString(), "UTF-8"));
 					//System.out.println(URLEncoder.encode(path.toString(), "WINDOWS-1251"));
 				} catch (ClassNotFoundException e1) {
+					e1.printStackTrace();
+				} catch (MalformedURLException e1) {
 					e1.printStackTrace();
 				}
 				strForMessanger += ste[idx].getClassName()

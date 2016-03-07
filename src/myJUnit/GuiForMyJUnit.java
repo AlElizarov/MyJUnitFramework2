@@ -27,7 +27,7 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 
-public class GuiForMyJUnit {
+class GuiForMyJUnit {
 
 	private TestResult result;
 	private String suiteName;

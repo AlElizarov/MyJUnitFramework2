@@ -1,6 +1,6 @@
 package myJUnit;
 
-public class TestCalc extends MyTestCase{
+class TestCalc extends MyTestCase{
 	
 	int x;
 	int y;

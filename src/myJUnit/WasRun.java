@@ -2,7 +2,7 @@ package myJUnit;
 
 import java.util.ArrayList;
 
-public class WasRun extends MyTestCase {
+class WasRun extends MyTestCase {
 
 	public void testMethod() {
 	}

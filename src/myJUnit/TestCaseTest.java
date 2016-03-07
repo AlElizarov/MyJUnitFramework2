@@ -1,6 +1,6 @@
 package myJUnit;
 
-public class TestCaseTest extends MyTestCase {
+class TestCaseTest extends MyTestCase {
 
 	public void testResult() {
 		WasRun test = new WasRun();

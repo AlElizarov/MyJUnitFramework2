@@ -1,6 +1,6 @@
 package myJUnit;
 
-public class TestMyAssert extends MyTestCase {
+class TestMyAssert extends MyTestCase {
 
 	public void testAssertEquals() {
 		MyAssert.assertEquals(7, 6);

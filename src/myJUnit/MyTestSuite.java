@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.SwingUtilities;
 
-public class MyTestSuite {
+public final class MyTestSuite {
 
 	private ArrayList<MyTestCase> tests = new ArrayList<>();
 

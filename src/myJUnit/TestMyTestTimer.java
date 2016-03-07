@@ -1,6 +1,6 @@
 package myJUnit;
 
-public class TestMyTestTimer extends MyTimeTester{
+class TestMyTestTimer extends MyTimeTester{
 
 	public TestMyTestTimer(long timeout) {
 		super(timeout);

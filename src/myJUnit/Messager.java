@@ -1,6 +1,6 @@
 package myJUnit;
 
-public class Messager {
+class Messager {
 	
 	private boolean isOk;
 	private boolean isFailed;

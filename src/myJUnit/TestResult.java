@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-public class TestResult {
+class TestResult {
 
 	private int runCount = 0;
 	private int failedCount = 0;

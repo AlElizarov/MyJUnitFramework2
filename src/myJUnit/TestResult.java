@@ -9,23 +9,38 @@ public class TestResult {
 	private int runCount = 0;
 	private int failedCount = 0;
 	private int failureCount = 0;
-	private SortedMap<String, String> testMethods = new TreeMap<>();
-	private SortedMap<String, SortedMap<String, String>> testClasses = new TreeMap<>();
+	private SortedMap<String, Messager> testMethods = new TreeMap<>();
+	private SortedMap<String, SortedMap<String, Messager>> testClasses = new TreeMap<>();
 
 	public String summary() {
 		String res = runCount + " run, " + failedCount + " failed, "
 				+ failureCount + " failures\n";
-		for (Map.Entry<String, SortedMap<String, String>> entry : testClasses
+		for (Map.Entry<String, SortedMap<String, Messager>> entry : testClasses
 				.entrySet()) {
 			res = res + entry.getKey() + ":\n";
-			for (Map.Entry<String, String> entry2 : entry.getValue().entrySet()) {
-				res = res + entry2.getKey() + ": " + entry2.getValue() + '\n';
+			for (Map.Entry<String, Messager> entry2 : entry.getValue().entrySet()) {
+				res = res + entry2.getKey() + ": " + entry2.getValue().getMes() + '\n';
 			}
 		}
 		return res;
 	}
+	
+	public void setTestMethods(SortedMap<String, Messager> testMethods) {
+		this.testMethods = testMethods;
+	}
 
-	public SortedMap<String, String> getTestMethods() {
+	public void setTestClasses(
+			SortedMap<String, SortedMap<String, Messager>> testClasses) {
+		this.testClasses = testClasses;
+	}
+
+	public String resSum(){
+		String res = runCount + " run, " + failedCount + " failed, "
+				+ failureCount + " failures\n";
+		return res;
+	}
+
+	public SortedMap<String, Messager> getTestMethods() {
 		return testMethods;
 	}
 
@@ -71,8 +86,15 @@ public class TestResult {
 		this.failureCount = failureCount;
 	}
 
-	public SortedMap<String, SortedMap<String, String>> getTestClasses() {
+	public SortedMap<String, SortedMap<String, Messager>> getTestClasses() {
 		return testClasses;
+	}
+	
+	public boolean isAllTrue(){
+		if(failedCount == 0 && failureCount == 0){
+			return true;
+		}
+		return false;
 	}
 
 }

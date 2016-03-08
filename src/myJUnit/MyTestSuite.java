@@ -4,14 +4,18 @@ import java.util.ArrayList;
 
 import javax.swing.SwingUtilities;
 
-public final class MyTestSuite {
+public final class MyTestSuite implements Test{
 
-	private ArrayList<MyTestCase> tests = new ArrayList<>();
+	private ArrayList<Test> tests = new ArrayList<>();
 
-	public void add(MyTestCase test) {
+	/*
+	 * Не смог по хорошему реализовать добавление в TestSuite других TestSui
+	 */
+	public void add(Test test) {
 		tests.add(test);
 	}
 
+	@Override
 	public TestResult run() {
 		
 		TestResult result = new TestResult();
@@ -40,6 +44,10 @@ public final class MyTestSuite {
 			}
 		});
 		return result;
+	}
+	
+	public void removeTest(Test test){
+		tests.remove(test);
 	}
 
 }

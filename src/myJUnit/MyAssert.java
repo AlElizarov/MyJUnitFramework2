@@ -21,8 +21,8 @@ public class MyAssert {
 		assertTrue(!b);
 	}
 	
-	public static void fail(){
-		throw new AssertionError("no exceptions were thrown");
+	public static void fail(String msg){
+		throw new AssertionError(msg);
 	}
 
 }

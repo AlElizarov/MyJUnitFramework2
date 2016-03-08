@@ -10,9 +10,10 @@ import java.util.TreeMap;
 
 import javax.swing.SwingUtilities;
 
-public class MyTestCase {
+public class MyTestCase implements Test{
 
-	public TestResult run() {
+	@Override
+	public final TestResult run() {
 		TestResult result = new TestResult();
 		// Method[] methods = getClass().getDeclaredMethods();
 		Method[] methods = getClass().getMethods();

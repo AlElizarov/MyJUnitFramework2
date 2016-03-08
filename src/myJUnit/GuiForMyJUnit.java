@@ -7,6 +7,9 @@ import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Map.Entry;
 import java.util.SortedMap;
 import java.util.Vector;
@@ -239,14 +242,18 @@ class RedTreeCellRenderer extends DefaultTreeCellRenderer {
 		setForeground(getTextSelectionColor());
 		DefaultMutableTreeNode treenode = (DefaultMutableTreeNode) value;
 		Object ob = null;
+		File file = null;
 		if (leaf) {
 			ob = treenode.getUserObject();
 			if (((MyTreeLeaf) ob).getMessanger().isFailed()) {
-				setIcon(new ImageIcon("images/redkrest.png"));
+				file = new File("images//redkrest.png");
+				setIcon(new ImageIcon(file.getAbsolutePath()));
 			} else if (((MyTreeLeaf) ob).getMessanger().isFailure()) {
-				setIcon(new ImageIcon("images/blueminus.png"));
+				file = new File("images/blueminus.png");
+				setIcon(new ImageIcon(file.getAbsolutePath()));
 			} else {
-				setIcon(new ImageIcon("images/green.png"));
+				file = new File("images/green.png");
+				setIcon(new ImageIcon(file.getAbsolutePath()));
 			}
 		} else {
 
@@ -254,11 +261,14 @@ class RedTreeCellRenderer extends DefaultTreeCellRenderer {
 			getChilds(treenode);
 
 			if (status.equals("failed")) {
-				setIcon(new ImageIcon("images/redkrest.png"));
+				file = new File("images//redkrest.png");
+				setIcon(new ImageIcon(file.getAbsolutePath()));
 			} else if (status.equals("failure")) {
-				setIcon(new ImageIcon("images/blueminus.png"));
+				file = new File("images/blueminus.png");
+				setIcon(new ImageIcon(file.getAbsolutePath()));
 			} else {
-				setIcon(new ImageIcon("images/green.png"));
+				file = new File("images/green.png");
+				setIcon(new ImageIcon(file.getAbsolutePath()));
 			}
 		}
 		return this;

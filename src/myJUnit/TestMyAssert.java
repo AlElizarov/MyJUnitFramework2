@@ -23,7 +23,7 @@ class TestMyAssert extends MyTestCase {
 		try {
 			if (true)
 				// throw new Exception();
-				MyAssert.fail();
+				MyAssert.fail("no exceptions were thrown");
 		} catch (Exception e) {
 
 		}

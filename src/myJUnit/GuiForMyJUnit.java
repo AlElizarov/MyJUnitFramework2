@@ -8,8 +8,6 @@ import java.awt.Dimension;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Map.Entry;
 import java.util.SortedMap;
 import java.util.Vector;
